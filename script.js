@@ -11,16 +11,24 @@ console.log('Hola soy tu consola y juntas vamos a aprender Javascript')
 //Ejercicio 1: Crea una constante llamada postres con un tipo de dato array que contiene los siguientes elementos: helado, tarta, pastel e imprímelo en la consola. 
 
 //Escribe tu código aquí
-
+const postres = ["helado", "tarta", "patel"];
+console.log(postres);
 //Objetos
 
 //Ejercicio 2: Crea una constante con un tipo de dato objeto llamado coder que contengan dos propiedades, nombre y edad e imprímelo en la consola.
 
 //Escribe tu código aquí
+const coder = {
+    nombre: "Eva",
+    edad: 49,
+};
+console.log(coder);
 
 //Ejercicio 3: Busca como imprimir en consola el tipo de dato de cada variable que hemos creado.
 
 //Escribe tu código aquí
+console.log("Mis postres son " + postres[0] + ", " + postres[1] + ", " + postres[2] + ".");
+console.log(`Mi coder es ${coder.nombre} y tiene ${coder.edad} años`);
 
 //CONDICIONALES
 
@@ -28,50 +36,105 @@ console.log('Hola soy tu consola y juntas vamos a aprender Javascript')
 
 const age = 18
 //Escribe tu código aquí
-
+function mayorDeEdad(age){
+    if (age=> 18){
+        console.log("Eres mayor de edad");
+    } else {
+        console.log("no eres aún mayor de edad");
+    }
+}
+    
+mayorDeEdad(18);
 
 //Ejercicio 5: Cambia el valor de age a 12 para mirar el resultado del ejercicio anterior.
 
-
+mayorDeEdad(12);
+console.log("No deja cambiar el valor porque está guardada en una constante")
 //Ejercicio 6: Escribe un condicional if/else que lea la constante pet y si es un perro, que imprima en la consola "Tengo un perro", si es un gato, que imprima en la consola "Tengo un gato", si es un pájaro, que imprima en la consola "Tengo un pájaro" y si no es ninguno de los 3 que imprima "No tengo una mascota convencional"
 
 const pet = "perro";
 //Escribe tu código aquí
+function tipoMascota(pet){
+    if (pet = "perro"){
+        console.log("Tengo un perro");
+    } else if(pet = "gato") {
+        console.log("Tengo un gato");
+    } else if (pet = "pájaro"){
+        console.log("Tengo un pájaro");
+    } else {
+        console.log("No tengo una mascota convencional");
+    }
+}
 
-
+tipoMascota();
 //Ejercicio 7: cambia el valor de pet a "serpiente" y mira el resultado en consola para comprobar que tu código funciona bien.
 
-
+//tipoMascota(pet = "serpiente");
+console.log("No deja cambiar el valor de una constante")
 //Ejercicio 8: Haz el mismo ejercicio 3, pero con el condicional switch.
 
 //Escribe tu código aquí
 
+switch (pet) {
+    case "perro":
+      console.log("Tengo un perro");
+      break;
+    case "gato":
+      console.log("Tengo un gato");
+      break;
+    case "pájaro":
+      console.log("Tengo un pájaro");
+      break;
+    default:
+      console.log("No tengo una mascota convencional");
+      break;
+  }
 
 //Ejercicio 9: Usando un operador ternario, escribe un programa que lea la constante weather e imprima en consola si es soleado "Me vestiré con un vestido" y si no es así que imprima "Me vestiré con pantalón"
 
-const weather = "soleado"
+const weather = "soleado";
 
-const result = //Escribe tu código aquí;
+const result = (weather === "soleado") ? "Me vestiré con un vestido" : "Me vestiré con pantalón"; //Escribe tu código aquí;
 
-console.log(result)
+console.log(result);
 
 //Ejercicio 10: cambia el valor de weather a "frío" y mira el resultado en consola para comprobar que tu código funciona bien.
+//weather = "frío";
+console.log("No deja cambiar el valor de una constante");
+const weather1 = "frío";
+let result1 = (weather1 === "soleado") ? "Me vestiré con un vestido" : "Me vestiré con pantalón";
 
+console.log(result1);
 //Ejercicio 11: Escribe un programa que al darle la constante 'value' imprima en consola "Es un número" cuando el valor sea de tipo number, "Es un string" cuando el valor sea de tipo string o si no es ni uno ni otro que imprima "No es ni número ni string". Puedes hacerlo con cualquier tipo de condicional.
 
-const value = '1'
+const value = '1';
 
 //Escribe tu código aquí
-
+function typeOfValue(value){
+    if(typeof(value)=== Number){
+        console.log("Es un número")
+    } else if (typeof(value)=== "string"){
+        console.log("Es un String")
+    } else {
+        console.log("No es ni número ni string")
+    }
+}
+typeOfValue(value);
 
 //BUCLES
 
 //Ejercicio 12: Imprime en consola una lista del 0 al 10 con el bucle for
 
 //Escribe tu código aquí
+function createList(){
+    for (let i = 0; i <= 10; i++) {
+        console.log(i);
+      }
+}
+createList();
 
-
-//Ejercicio 13: Con un bucle for in imprime en pantalla todos los nombres, apellidos y su aporte a la sociedad de las programadoras de la historia contenidas en el array llamado 'programmers', Deberás imprimir el índice y la información de cada una de ellas de la siguiente manera: '0: Ada Lovelace, su aporte fue la máquina analítica'. 
+//Ejercicio 13: Con un bucle for in imprime en pantalla todos los nombres, apellidos y su aporte a la sociedad de las programadoras de la historia contenidas en el array llamado 'programmers',
+// Deberás imprimir el índice y la información de cada una de ellas de la siguiente manera: '0: Ada Lovelace, su aporte fue la máquina analítica'. 
 
 const programmers = [
     {
@@ -97,6 +160,13 @@ const programmers = [
 ]
 
 //Escribe tu código aquí
+function programmersLoops(){
+    for ( let programmer in programmers) {
+        
+        console.log(programmer,`: ${programmers[programmer].name} ${programmers[programmer].lastname}, su aporte fue ${programmers[programmer].knowledge}`)
+    }
+}
+programmersLoops();
 
 
 //Ejercicio 14: Con un bucle for of imprime en consola "Hola, mi nombre es ... " y reemplaza los tres puntos con cada nombre del array dado.
@@ -105,24 +175,54 @@ const names = ['Rocío', 'Cris', 'Antía', 'Judith', 'Noelia']
 
 //Escribe tu código aquí
 
-
+function greetings(){
+    for( let name of names){
+        console.log("Hola, mi nombre es "+ name)
+    }
+}
+greetings();
 //Ejercicio 15: Con un bucle while imprime en consola una lista del 1 al 5.
 
 //Escribe tu código aquí
+function whileList(){
+    let i = 0;
+    while(i < 6){
+        console.log(i);
+        i++;
+    }
+};
+whileList();
 
 
 //Ejercicio 16: Realiza el mismo ejercicio anterior pero con un bucle do while.
 
 //Escribe tu código aquí
-
+function doList(){
+    let i = 0;
+do {
+  console.log( i );
+  i++;
+} while (i < 6);
+};
+doList();
 
 //Ejercicio 17: Saludo Personalizado
 //Crea una función llamada saludar que tome un parámetro llamado nombre y devuelva un saludo personalizado. Luego, llama a la función con diferentes nombres y muestra el resultado en la consola.
 
 //Escribe tu código aquí
-
-
+function greetings2(name){
+    console.log(`¡Hola, ${name}!, ¿Qué tal?`)
+}
+greetings2("Rocío");
+greetings2("Nieves");
+greetings2("Lluis");
 //Ejercicio 18: Calcular el Área de un Rectángulo
-//Crea una función llamada calcularAreaRectangulo que tome dos parámetros (ancho y alto) y devuelva el área del rectángulo. Luego, llama a la función con diferentes valores de ancho y alto y muestra el resultado en la consola.
+//Crea una función llamada calcularAreaRectangulo que tome dos parámetros (ancho y alto) y devuelva el área del rectángulo. Luego, llama a la función con diferentes 
+//valores de ancho y alto y muestra el resultado en la consola.
 
 //Escribe tu código aquí
+function area(w, h){
+    console.log(`El área del rectángulo de alto ${h} y ancho ${w} es ` + (w*h));
+}
+area(10, 20);
+area(5, 9);
